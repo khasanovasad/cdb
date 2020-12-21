@@ -19,13 +19,15 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        Statement statement;
+        Statement statement{};
         switch(prepareStatement(inputBuffer, statement)) {
             case PREPARE_SUCCESS:
                 break;
             case PREPARE_UNRECOGNIZED_STATEMENT:
                 std::cout << "Unrecognized keyword at start of '" << inputBuffer.getBuffer() << "'." << std::endl;
                 continue;
+            case PREPARE_SYNTAX_ERROR:
+                break;
         }
 
         executeStatement(statement);
