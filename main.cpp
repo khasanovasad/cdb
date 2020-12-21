@@ -3,37 +3,32 @@
 #include "InputBuffer.h"
 #include "Common.h"
 
-int main(int argc, char *argv[]) 
-{
-    InputBuffer ibuffer;
-    while (true)
-    {
-        ibuffer.PrintPrompt();
-        ibuffer.ReadInput();
+int main(int argc, char *argv[]) {
+    InputBuffer inputBuffer;
+    while (true) {
+        inputBuffer.printPrompt();
+        inputBuffer.readInput();
 
-        if (ibuffer.GetBuffer()[0] == '.') 
-        {
-            switch(do_meta_command(ibuffer)) 
-            {
+        if (inputBuffer.getBuffer()[0] == '.') {
+            switch(doMetaCommand(inputBuffer)) {
                 case META_COMMAND_SUCCESS:
                     continue;
                 case META_COMMAND_UNRECOGNIZED_COMMAND:
-                    std::cout << "Unrecognized command " << ibuffer.GetBuffer() << std::endl;
+                    std::cout << "Unrecognized command " << inputBuffer.getBuffer() << std::endl;
                     continue;
             }
         }
 
-        statement statement;
-        switch(prepare_statement(ibuffer, &statement)) 
-        {
+        Statement statement;
+        switch(prepareStatement(inputBuffer, statement)) {
             case PREPARE_SUCCESS:
                 break;
             case PREPARE_UNRECOGNIZED_STATEMENT:
-                std::cout << "Unrecognized keyword at start of '" << ibuffer.GetBuffer() << "'." << std::endl;
+                std::cout << "Unrecognized keyword at start of '" << inputBuffer.getBuffer() << "'." << std::endl;
                 continue;
         }
 
-        execute_statement(&statement);
+        executeStatement(statement);
         printf("Executed.\n");
     }
     return 0;

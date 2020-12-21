@@ -5,17 +5,16 @@
 #include <string>
 #include <utility>
 
-class InputBuffer
-{
+class InputBuffer {
     public:
         InputBuffer();
         ~InputBuffer();
 
-        void PrintPrompt() const;
-        void ReadInput();
+        void printPrompt() const;
+        void readInput();
 
-        void SetBuffer(std::string buffer);
-        [[nodiscard]] std::string GetBuffer() const;
+        void setBuffer(std::string buffer);
+        [[nodiscard]] std::string getBuffer() const;
 
     private:
         std::string buffer_;
