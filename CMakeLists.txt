@@ -9,6 +9,8 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 
 
 add_executable(cdb main.cpp
+            "include/Common.h"
+            "src/Common.cpp"
 
             "include/InputBuffer.h"
             "src/InputBuffer.cpp"
