@@ -1,2 +1,2 @@
-# cppdb
-Minimalist DBMS written in C++ programming language.
+# cdb
+Minimalist DBMS written in C language.
