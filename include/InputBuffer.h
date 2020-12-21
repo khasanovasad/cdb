@@ -1,5 +1,5 @@
-#ifndef CDB_INPUT_BUFFER_H
-#define CDB_INPUT_BUFFER_H
+#ifndef CPPDB_INPUT_BUFFER_H
+#define CPPDB_INPUT_BUFFER_H
 
 #include <iostream>
 #include <string>
@@ -20,4 +20,4 @@ class InputBuffer
         std::string buffer_;
 };
 
-#endif // CDB_INPUT_BUFFER_H
+#endif // CPPDB_INPUT_BUFFER_H

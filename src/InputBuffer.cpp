@@ -4,7 +4,7 @@ InputBuffer::InputBuffer() { }
 
 InputBuffer::~InputBuffer() { }
 
-void InputBuffer::PrintPrompt() const { std::cout << "cdb > "; }
+void InputBuffer::PrintPrompt() const { std::cout << "cppdb > "; }
 
 void InputBuffer::ReadInput()
 {

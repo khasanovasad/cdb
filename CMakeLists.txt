@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(cdb CXX)
+project(cppdb CXX)
 
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 17)
@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED Yes)
 add_compile_options(-Wall -Wextra -Wpedantic)
 
 
-add_executable(cdb main.cpp
+add_executable(cppdb main.cpp
             "include/Common.h"
             "src/Common.cpp"
 
@@ -16,4 +16,4 @@ add_executable(cdb main.cpp
             "src/InputBuffer.cpp"
         )
 
-target_include_directories(cdb PUBLIC "${PROJECT_SOURCE_DIR}/include")
+target_include_directories(cppdb PUBLIC "${PROJECT_SOURCE_DIR}/include")

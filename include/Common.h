@@ -1,5 +1,5 @@
-#ifndef CDB_COMMON_H
-#define CDB_COMMON_H
+#ifndef CPPDB_COMMON_H
+#define CPPDB_COMMON_H
 
 #include <iostream>
 #include <string>
@@ -33,4 +33,4 @@ meta_command_result do_meta_command(const InputBuffer& ibuffer);
 prepare_result prepare_statement(const InputBuffer& ibuffer, statement* statement);
 void execute_statement(statement* statement);
 
-#endif // CDB_COMMON_H 
+#endif // CPPDB_COMMON_H 
