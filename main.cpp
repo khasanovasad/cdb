@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) 
 {
     InputBuffer ibuffer;
-    while (true) 
+    while (true)
     {
         ibuffer.PrintPrompt();
         ibuffer.ReadInput();

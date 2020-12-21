@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <utility>
 
 class InputBuffer
 {
@@ -14,7 +15,7 @@ class InputBuffer
         void ReadInput();
 
         void SetBuffer(std::string buffer);
-        std::string GetBuffer() const;
+        [[nodiscard]] std::string GetBuffer() const;
 
     private:
         std::string buffer_;

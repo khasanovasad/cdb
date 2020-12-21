@@ -16,6 +16,7 @@ enum prepare_result
 {
     PREPARE_SUCCESS,
     PREPARE_UNRECOGNIZED_STATEMENT,
+    PREPARE_SYNTAX_ERROR,
 };
 
 enum statement_type 
@@ -24,10 +25,10 @@ enum statement_type
     STATEMENT_SELECT,
 };
 
-typedef struct statement 
+struct statement
 {
     statement_type type;
-} statement;
+};
 
 meta_command_result do_meta_command(const InputBuffer& ibuffer);
 prepare_result prepare_statement(const InputBuffer& ibuffer, statement* statement);

@@ -1,8 +1,8 @@
 #include "InputBuffer.h"
 
-InputBuffer::InputBuffer() { }
+InputBuffer::InputBuffer() = default;
 
-InputBuffer::~InputBuffer() { }
+InputBuffer::~InputBuffer() = default;
 
 void InputBuffer::PrintPrompt() const { std::cout << "cppdb > "; }
 
@@ -18,10 +18,10 @@ void InputBuffer::ReadInput()
 
 void InputBuffer::SetBuffer(std::string buffer)
 {
-    this->buffer_ = buffer;
+    this->buffer_ = std::move(buffer);
 }
 
-std::string InputBuffer::GetBuffer() const
+[[nodiscard]] std::string InputBuffer::GetBuffer() const
 {
     return buffer_;
 }
