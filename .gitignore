@@ -4,3 +4,6 @@ bin/
 *.swp
 *.swn
 *.swo
+
+cmake-build-debug/
+.idea/
